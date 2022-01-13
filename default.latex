@@ -11,7 +11,22 @@
 \officesymbol{$officesymbol$}
 $if(suspensedate)$\suspensedate{$suspensedate$}$endif$
 \signaturedate{$if(signaturedate)$$signaturedate$$else$\today$endif$}
-\memoline{$if(memoline)$$memoline$$else$MEMORANDUM FOR RECORD$endif$}
+$if(multithru)$
+  $for(multithru)$
+  \multimemothru{$multithru$}
+  $endfor$
+$endif$
+
+$if(thru)$
+\memoline{$thru$}
+$endif$
+$if(memoline)$
+  $for(memoline)$
+  \memoline{$memoline$}
+  $endfor$
+$else$
+\memoline{MEMORANDUM FOR RECORD}
+$endif$
 \subject{$subject$}
 
 \begin{document}
