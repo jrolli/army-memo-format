@@ -179,7 +179,7 @@
 % AR 25-50 allows for hyphenation (just not across pages, which LaTeX won't do
 % anyway) we just want less hyphenation than more
 \hyphenpenalty=5000
-% \RequirePackage[none]{hyphenat}
+\RequirePackage{hyphenat}
 % https://tex.stackexchange.com/a/134318
 % https://tex.stackexchange.com/a/249335
 % https://tex.stackexchange.com/a/134342
@@ -264,10 +264,10 @@
 \newcommand{\addmemoline}[1]{\stepcounter{am@memoline@count}\listadd{\am@list@memolines}{#1}}
 \newcommand{\mfr}{\addmemoline{MEMORANDUM FOR RECORD}}
 \newcommand{\memoline}[1]{\addmemoline{#1}}
-\newcommand{\am@domemoline}[1]{\vspace{\baselineskip}\noindent{}#1\\}
+\newcommand{\am@domemoline}[1]{\vspace{\baselineskip}\noindent{}\nohyphens{#1}\\}
 \newcounter{am@memothru@count}
 \newcommand{\multimemothru}[1]{\stepcounter{am@memothru@count}\listadd{\am@list@memothru}{#1}}
-\newcommand{\am@do@memothru}[1]{\noindent{}\hangindent=0.25in{}#1\\}
+\newcommand{\am@do@memothru}[1]{\noindent{}\hangindent=0.25in{}\nohyphens{#1}\\}
 \newcommand{\am@memoline}{%
   % if there is nothing specified, add "memorandum for record"
   \ifnumcomp{\value{am@memoline@count}}{=}{0}{%

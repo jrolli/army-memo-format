@@ -9,5 +9,5 @@ main: main.pdf
 	latexmk -pdf -pvc -lualatex $<
 
 clean:
-	rm *.pdf
+	find . -not -name DODb1.pdf -name \*.pdf -delete
 

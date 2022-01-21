@@ -1,3 +1,5 @@
+\RequirePackage{needspace}
+
 \providecommand{\tightlist}{}%
 	  % \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
@@ -17,9 +19,6 @@ $if(multithru)$
   $endfor$
 $endif$
 
-$if(thru)$
-\memoline{$thru$}
-$endif$
 $if(memoline)$
   $for(memoline)$
   \memoline{$memoline$}
@@ -28,6 +27,9 @@ $else$
 \memoline{MEMORANDUM FOR RECORD}
 $endif$
 \subject{$subject$}
+
+\newcommand{\phone}{$phone$}
+\newcommand{\email}{$email$}
 
 \begin{document}
 $body$
